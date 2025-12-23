@@ -28,13 +28,13 @@ A small Node.js + Express application for managing notices with file uploads.
 Create a `.env` file in the project root with the following variables:
 
 - `MONGO_URI` - MongoDB connection string (required)
-- `PORT` - optional server port (defaults to `3000` if not set)
+- `PORT` - optional server port (defaults to `5000` if not set)
 
 Example `.env`:
 
 ```
 MONGO_URI=mongodb://localhost:27017/noticejs
-PORT=3000
+PORT=5000
 ```
 
 ## Install
@@ -82,5 +82,6 @@ Uploaded files are saved to the `uploads/` directory at the project root. Make s
 - Add pagination and searching for the notices listing.
 
 ---
+url : https://nebs-backend.onrender.com
 
 If you'd like, I can add example `curl` requests, API documentation, or create a simple Postman collection next.
