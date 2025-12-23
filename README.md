@@ -3,7 +3,7 @@
 A lightweight Node.js + Express backend application for managing notices, built with MongoDB and Mongoose.  
 This service supports creating, publishing, unpublishing, and viewing notices with optional file uploads.
 
-🔗 **Live API URL:** https://nebs-backend.onrender.com
+🔗 **Live API URL:** https://nebs-backend.onrender.com/api/notices
 
 ---
 
@@ -103,8 +103,8 @@ The app exposes a RESTful API for notices. Example endpoints (adjust if your rou
 - `GET /api/notices` - list notices
 - `POST /api/notices` - create a notice (supports file upload)
 - `GET /api/notices/:id` - get a single notice
-- `PUT /api/notices/:id` - update a notice
-- `DELETE /api/notices/:id` - delete a notice
+- `PATCH /api/status/:id` - update a status
+- `GET /api/status/:id` - get a single status
 
 Use a tool like `curl` or Postman to interact with the API. When uploading files, use `multipart/form-data`.
 
