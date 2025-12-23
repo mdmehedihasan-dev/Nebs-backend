@@ -1,11 +1,48 @@
-# NoticeJS
+# Nebs Backend
 
-A small Node.js + Express application for managing notices with file uploads.
+A lightweight Node.js + Express backend application for managing notices, built with MongoDB and Mongoose.  
+This service supports creating, publishing, unpublishing, and viewing notices with optional file uploads.
 
-## Features
-- REST API for creating, reading, updating, and deleting notices
-- File upload support (stored in the `uploads/` directory)
-- MongoDB persistence via Mongoose
+🔗 **Live API URL:** https://nebs-backend.onrender.com
+
+---
+
+## 📌 Overview
+
+Nebs Backend provides a RESTful API to support a Notice Board system (used in NEBS-IT HR/Employee Management frontend).  
+It allows administrators to create notices, manage publish status, and fetch notices efficiently.
+
+All core backend requirements — including optional bonus features — have been fully implemented.
+
+---
+
+## 🚀 Features
+
+- Create notices with structured data
+- Publish / unpublish notices (status toggle)
+- Fetch all notices with status filtering (active / draft)
+- View a single notice by ID (bonus feature ✅)
+- MongoDB persistence using Mongoose
+- File upload support using Multer
+- Clean and modular project structure
+- Ready for frontend integration
+
+---
+
+## 🛠 Tech Stack
+
+- **Node.js**
+- **Express.js**
+- **MongoDB**
+- **Mongoose**
+- **Multer** (file uploads)
+- **dotenv** (environment variables)
+
+---
+
+## 📂 Project Structure
+
+
 
 ## Project Structure
 
@@ -33,7 +70,7 @@ Create a `.env` file in the project root with the following variables:
 Example `.env`:
 
 ```
-MONGO_URI=mongodb://localhost:27017/noticejs
+MONGO_URI=mongodb://localhost:27017/name
 PORT=5000
 ```
 
@@ -75,13 +112,19 @@ Use a tool like `curl` or Postman to interact with the API. When uploading files
 
 Uploaded files are saved to the `uploads/` directory at the project root. Make sure this folder is writable by the process.
 
-## Notes & Next Steps
+👤 Author
 
-- Add authentication if you need protected endpoints.
-- Consider adding request validation and tests.
-- Add pagination and searching for the notices listing.
+Md Mehedi Hasan
 
----
-url : https://nebs-backend.onrender.com
+Full Stack Developer (MERN Stack)
 
-If you'd like, I can add example `curl` requests, API documentation, or create a simple Postman collection next.
+GitHub: https://github.com/mdmehedihasan-dev
+
+LinkedIn: https://www.linkedin.com/in/mdmehedihasanmr
+
+Email: mdmehedihasandev0@gmail.com
+
+Location: Benarosi Polli, Mirpur 10, Dhaka.
+
+
+
