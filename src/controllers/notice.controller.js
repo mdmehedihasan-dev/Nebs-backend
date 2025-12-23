@@ -1,8 +1,6 @@
 import Notice from "../models/Notice.js";
-
-/**
- * Create Notice
- */
+//  =========================Create Notice=========================
+ 
 export const createNotice = async (req, res) => {
   try {
     const files =
@@ -26,9 +24,8 @@ export const createNotice = async (req, res) => {
   }
 };
 
-/**
- * Get All Notices (filter by status)
- */
+// ===================== Get All Notices (filter by status)=====================
+
 export const getAllNotices = async (req, res) => {
   try {
     const { status } = req.query;
@@ -46,13 +43,26 @@ export const getAllNotices = async (req, res) => {
   }
 };
 
-/**
- * Update Notice Status (Publish / Unpublish)
- */
+//  =======================Update Notice Status (Publish / Unpublish)=======================
+
 export const updateNoticeStatus = async (req, res) => {
   try {
     const { id } = req.params;
     const { status } = req.body;
+
+    if (status === "draft") {
+      return res.status(400).json({
+        success: false,
+        message: "Draft status cannot be set manually",
+      });
+    }
+
+    if (!["published", "unpublished"].includes(status)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid status value",
+      });
+    }
 
     const notice = await Notice.findByIdAndUpdate(
       id,
@@ -61,22 +71,27 @@ export const updateNoticeStatus = async (req, res) => {
     );
 
     if (!notice) {
-      return res.status(404).json({ success: false, message: "Notice not found" });
+      return res.status(404).json({
+        success: false,
+        message: "Notice not found",
+      });
     }
 
     res.json({
       success: true,
-      message: "Notice status updated",
+      message: `Notice ${status} successfully`,
       data: notice,
     });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
 };
 
-/**
- * Get Single Notice (Bonus)
- */
+// =========================Get Single Notice =========================
+ 
 export const getSingleNotice = async (req, res) => {
   try {
     const notice = await Notice.findById(req.params.id);

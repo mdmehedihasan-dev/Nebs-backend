@@ -57,7 +57,7 @@ const noticeSchema = new mongoose.Schema(
 
     status: {
       type: String,
-      enum: ["draft","published","unpublished"],
+      enum: ["draft", "published", "unpublished"],
       default: "draft",
     },
 
